@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { TwentyFirstToolbar } from "@21st-extension/toolbar-next";
+import { ReactPlugin } from "@21st-extension/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,6 +25,11 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <TwentyFirstToolbar
+          config={{
+            plugins: [ReactPlugin],
+          }}
+        />
       </body>
     </html>
   );
