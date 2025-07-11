@@ -4,27 +4,17 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export function Gallery10() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
+  const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: {
+    visible: (i) => ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        duration: 1,
+        delay: 0.3 + i * 0.1,
+        ease: [0.25, 0.4, 0.25, 1],
+      },
+    }),
   };
 
   const headerVariants = {
@@ -33,20 +23,21 @@ export function Gallery10() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        duration: 1.2,
+        delay: 0.2,
+        ease: [0.25, 0.4, 0.25, 1],
+      },
+    },
   };
 
   const images = [
-    "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-    "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-    "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-    "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-    "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-    "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-    "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
+    "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=500&fit=crop&crop=center",
+    "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=500&fit=crop&crop=center",
+    "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop&crop=center",
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop&crop=center",
+    "https://images.unsplash.com/photo-1561736778-92e52a7769ef?w=400&h=500&fit=crop&crop=center",
+    "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=500&fit=crop&crop=center",
+    "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=500&fit=crop&crop=center"
   ];
 
   return (
@@ -67,30 +58,28 @@ export function Gallery10() {
           </p>
         </motion.div>
         
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
-          className="gap-8 space-y-8 md:columns-3"
-        >
+        <div className="gap-8 space-y-8 md:columns-3">
           {images.map((src, index) => (
             <motion.a 
               key={index}
               href="#" 
               className="block w-full group"
-              variants={itemVariants}
+              custom={index}
+              variants={fadeUpVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
               <img
                 src={src}
-                alt={`Relume placeholder image ${index + 1}`}
+                alt={`Art showcase image ${index + 1}`}
                 className="size-full rounded-image object-cover transition-all duration-300 group-hover:shadow-lg"
               />
             </motion.a>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

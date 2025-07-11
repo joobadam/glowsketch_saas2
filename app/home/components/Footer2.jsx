@@ -9,6 +9,7 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
+import { Particles } from "@/components/ui/particles";
 
 const useNewsletterForm = () => {
   const [email, setEmail] = useState("");
@@ -66,8 +67,18 @@ export function Footer2() {
   ];
 
   return (
-    <footer id="relume" className="bg-[#CCFFCC] px-[5%] py-12 md:py-18 lg:py-20">
-      <div className="container-custom">
+    <footer id="relume" className="relative bg-[#00ff00] px-[5%] py-12 md:py-18 lg:py-20 overflow-hidden">
+      {/* Make sure the footer is relative and the Particles are absolutely positioned and behind content */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <Particles
+          className="w-full h-full"
+          quantity={100}
+          ease={800}
+          color="#000"
+          refresh
+        />
+      </div>
+      <div className="container-custom relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -79,22 +90,28 @@ export function Footer2() {
             <motion.a
               variants={itemVariants}
               href="#"
-              className="sm:col-start-1 sm:col-end-4 sm:row-start-1 sm:row-end-2 lg:col-start-auto lg:col-end-auto lg:row-start-auto lg:row-end-auto"
+              className="sm:col-start-1 sm:col-end-4 sm:row-start-1 sm:row-end-2 lg:col-start-auto lg:col-end-auto lg:row-start-auto lg:row-end-auto group"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-2xl font-unbounded font-bold text-neutral-darkest">
-                Logo
+              <div className="text-2xl font-unbounded font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent group-hover:from-green-400 group-hover:to-green-600 transition-all duration-300 drop-shadow-sm group-hover:drop-shadow-lg">
+                GlowSketch
               </div>
             </motion.a>
             
             <motion.div variants={itemVariants} className="flex flex-col items-start justify-start">
               <h2 className="mb-3 font-semibold md:mb-4 font-unbounded text-neutral-darkest">Quick Links</h2>
               <ul>
-                {["About Us", "Contact Us", "Support Center", "Blog Posts", "FAQs"].map((link, index) => (
+                {[
+                  "About Us",
+                  "Contact Us",
+                  "Support Center",
+                  "Blog Posts",
+                  "FAQs",
+                ].map((link, index) => (
                   <li key={index} className="py-2 text-sm">
                     <motion.a
                       href="#"
-                      className="flex items-center gap-3 text-neutral-darker hover:text-primary transition-colors duration-200"
+                      className="flex items-center gap-3 text-neutral-darker transition-all duration-200 font-medium rounded-md px-2 py-1 hover:text-green-700 hover:bg-green-100 hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-green-500"
                       whileHover={{ x: 5 }}
                     >
                       {link}
@@ -107,11 +124,17 @@ export function Footer2() {
             <motion.div variants={itemVariants} className="flex flex-col items-start justify-start">
               <h2 className="mb-3 font-semibold md:mb-4 font-unbounded text-neutral-darkest">Follow Us</h2>
               <ul>
-                {["Instagram", "Twitter", "Facebook", "LinkedIn", "YouTube"].map((social, index) => (
+                {[
+                  "Instagram",
+                  "Twitter",
+                  "Facebook",
+                  "LinkedIn",
+                  "YouTube",
+                ].map((social, index) => (
                   <li key={index} className="py-2 text-sm">
                     <motion.a
                       href="#"
-                      className="flex items-center gap-3 text-neutral-darker hover:text-primary transition-colors duration-200"
+                      className="flex items-center gap-3 text-neutral-darker transition-all duration-200 font-medium rounded-md px-2 py-1 hover:text-green-700 hover:bg-green-100 hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-green-500"
                       whileHover={{ x: 5 }}
                     >
                       {social}
@@ -124,11 +147,17 @@ export function Footer2() {
             <motion.div variants={itemVariants} className="flex flex-col items-start justify-start">
               <h2 className="mb-3 font-semibold md:mb-4 font-unbounded text-neutral-darkest">Stay Updated</h2>
               <ul>
-                {["Newsletter", "Updates", "Promotions", "Events", "Webinars"].map((item, index) => (
+                {[
+                  "Newsletter",
+                  "Updates",
+                  "Promotions",
+                  "Events",
+                  "Webinars",
+                ].map((item, index) => (
                   <li key={index} className="py-2 text-sm">
                     <motion.a
                       href="#"
-                      className="flex items-center gap-3 text-neutral-darker hover:text-primary transition-colors duration-200"
+                      className="flex items-center gap-3 text-neutral-darker transition-all duration-200 font-medium rounded-md px-2 py-1 hover:text-green-700 hover:bg-green-100 hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-green-500"
                       whileHover={{ x: 5 }}
                     >
                       {item}
@@ -190,17 +219,17 @@ export function Footer2() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={containerVariants}
-          className="flex flex-col-reverse items-start pt-6 pb-4 text-sm md:justify-start md:pt-8 md:pb-0 lg:flex-row lg:items-center lg:justify-between"
+          className="flex flex-col-reverse items-start pt-6 pb-4 text-sm md:justify-start md:pt-8 md:pb-0 lg:flex-row lg:items-center lg:justify-between border-t border-green-200/30"
         >
           <motion.div variants={itemVariants} className="flex flex-col-reverse items-start md:flex-row md:gap-6 lg:items-center">
             <div className="grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 md:grid-flow-col md:justify-center md:gap-x-6 md:gap-y-0 lg:text-left">
-              <p className="mt-8 md:mt-0 text-neutral-darker">
-                © 2024 GlowSketch. All rights reserved.
+              <p className="mt-8 md:mt-0 text-neutral-darker font-medium">
+                © {new Date().getFullYear()} GlowSketch. All rights reserved.
               </p>
             </div>
           </motion.div>
           
-          <motion.div variants={itemVariants} className="mb-8 flex items-center justify-center gap-3 lg:mb-0">
+          <motion.div variants={itemVariants} className="mb-8 flex items-center justify-center gap-4 lg:mb-0">
             {socialIcons.map((social, index) => {
               const IconComponent = social.icon;
               return (
@@ -208,7 +237,7 @@ export function Footer2() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className={`text-neutral-darker hover:text-primary transition-colors duration-200 ${social.className || ""}`}
+                  className={`text-neutral-darker hover:text-green-600 transition-all duration-300 p-2 rounded-lg hover:bg-green-50 ${social.className || ""}`}
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >

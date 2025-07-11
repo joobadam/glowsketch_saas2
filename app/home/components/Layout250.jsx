@@ -5,27 +5,30 @@ import { motion } from "framer-motion";
 import { RxChevronRight } from "react-icons/rx";
 
 export function Layout250() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
       opacity: 1,
+      y: 0,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
+        duration: 1,
+        delay: 0.2 + i * 0.15,
+        ease: [0.25, 0.4, 0.25, 1],
+      },
+    }),
   };
 
-  const itemVariants = {
+  const headerVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        duration: 1.2,
+        delay: 0.1,
+        ease: [0.25, 0.4, 0.25, 1],
+      },
+    },
   };
 
   return (
@@ -35,10 +38,10 @@ export function Layout250() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
+          variants={headerVariants}
           className="mb-12 md:mb-18 lg:mb-20"
         >
-          <motion.div variants={itemVariants} className="max-w-lg">
+          <motion.div className="max-w-lg">
             <h2 className="font-unbounded font-bold text-neutral-darkest text-4xl leading-[1.2] md:text-5xl lg:text-6xl">
               Discover the seamless process of creating art together on
               GlowSketch.
@@ -46,18 +49,19 @@ export function Layout250() {
           </motion.div>
         </motion.div>
         
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
-          className="grid grid-cols-1 items-start gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12"
-        >
-          <motion.div variants={itemVariants} className="flex flex-col">
+        <div className="grid grid-cols-1 items-start gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
+          <motion.div 
+            custom={0}
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="flex flex-col"
+          >
             <div className="mb-6 md:mb-8">
               <img
-                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg"
-                alt="Relume placeholder image"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop&crop=center"
+                alt="Artists collaborating together in creative workspace"
                 className="rounded-image hover-lift"
               />
             </div>
@@ -77,12 +81,19 @@ export function Layout250() {
               </motion.a>
             </div>
           </motion.div>
-
-          <motion.div variants={itemVariants} className="flex flex-col">
+          
+          <motion.div 
+            custom={1}
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="flex flex-col"
+          >
             <div className="mb-6 md:mb-8">
               <img
-                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg"
-                alt="Relume placeholder image"
+                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=500&h=300&fit=crop&crop=center"
+                alt="Team collaboration and invitation workspace"
                 className="rounded-image hover-lift"
               />
             </div>
@@ -105,12 +116,19 @@ export function Layout250() {
               </motion.a>
             </div>
           </motion.div>
-
-          <motion.div variants={itemVariants} className="flex flex-col">
+          
+          <motion.div 
+            custom={2}
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="flex flex-col"
+          >
             <div className="mb-6 md:mb-8">
               <img
-                src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg"
-                alt="Relume placeholder image"
+                src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=500&h=300&fit=crop&crop=center"
+                alt="Creative digital art creation with vibrant colors and tools"
                 className="rounded-image hover-lift"
               />
             </div>
@@ -134,7 +152,7 @@ export function Layout250() {
               </motion.a>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

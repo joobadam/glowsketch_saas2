@@ -2,43 +2,102 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { WavyBackground } from "../../../components/ui/wavy-background";
+import { Particles } from "../../../components/ui/particles";
+
 
 export function Header76() {
+  const galleryImages = [
+    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=500&fit=crop&crop=center", // Friends partying together
+    "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=500&fit=crop&crop=center", // Group of friends celebrating
+    "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=500&fit=crop&crop=center", // Social gathering at restaurant
+    "https://images.unsplash.com/photo-1543269664-7eef42226a21?w=400&h=500&fit=crop&crop=center", // Young people socializing 
+    "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=400&h=500&fit=crop&crop=center", // Friends having dinner party
+    "https://images.unsplash.com/photo-1556035511-3168381ea4d4?w=400&h=500&fit=crop&crop=center", // People enjoying social event
+    "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=500&fit=crop&crop=center", // Friends laughing together
+    "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=400&h=500&fit=crop&crop=center", // Group of friends hanging out
+    "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=500&fit=crop&crop=center", // Social party atmosphere
+    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop&crop=center", // Friends celebrating together
+    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=500&fit=crop&crop=center", // People in social setting
+    "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=400&h=500&fit=crop&crop=center"  // Community gathering
+  ];
+
+  const galleryAltTexts = [
+    "Friends partying and celebrating together",
+    "Group of friends enjoying social celebration",
+    "Social gathering at restaurant with friends", 
+    "Young people socializing and having fun",
+    "Friends having dinner party together",
+    "People enjoying social event and community",
+    "Friends laughing and bonding together",
+    "Group of friends hanging out socially",
+    "Social party atmosphere with people",
+    "Friends celebrating special moments together",
+    "People connecting in social setting",
+    "Community gathering and friendship"
+  ];
+
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        delay: 0.5 + i * 0.2,
+        ease: [0.25, 0.4, 0.25, 1],
+      },
+    }),
+  };
+
   return (
     <section
       id="relume"
-      className="bg-[#00ff00] grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0 relative overflow-hidden min-h-screen"
+      className="grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0 relative overflow-hidden min-h-screen bg-[#00ff00]"
     >
-      <div className="absolute inset-0 z-0">
-        <WavyBackground
-          colors={["#FFFFFF", "#98FB98", "#7FFF00"]}
-          waveWidth={150}
-          waveOpacity={0.2}
-          speed="fast"
-          containerClassName="h-full w-full"
-          backgroundFill="transparent"
-        />
-      </div>
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={800}
+        color="#000"
+        refresh
+      />
+
+  
+    
+      
 
       <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        custom={0}
+        variants={fadeUpVariants}
+        initial="hidden"
+        animate="visible"
         className="mx-[5%] max-w-[40rem] justify-self-start lg:mr-20 lg:ml-[5vw] lg:justify-self-end relative z-10"
       >
-        <h1 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl font-unbounded text-neutral-darkest">
+        <motion.h1 
+          custom={1}
+          variants={fadeUpVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl font-unbounded text-neutral-darkest"
+        >
           GlowSketch
-        </h1>
-        <p className="md:text-md text-neutral-darker">
+        </motion.h1>
+        <motion.p 
+          custom={2}
+          variants={fadeUpVariants}
+          initial="hidden"
+          animate="visible"
+          className="md:text-md text-neutral-darker"
+        >
           Unleash your imagination and collaborate with artists worldwide.
           Create stunning digital murals in real-time and bring your visions to
           life.
-        </p>
+        </motion.p>
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          custom={3}
+          variants={fadeUpVariants}
+          initial="hidden"
+          animate="visible"
           className="mt-6 flex flex-wrap gap-4 md:mt-8"
         >
           {/* Primary Button with Glow Effect */}
@@ -69,11 +128,12 @@ export function Header76() {
           </motion.button>
         </motion.div>
       </motion.div>
-      
+        
       <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+        custom={4}
+        variants={fadeUpVariants}
+        initial="hidden"
+        animate="visible"
         className="h-[30rem] overflow-hidden pr-[5vw] pl-[5vw] md:h-[40rem] lg:h-screen lg:pl-0 relative z-10"
       >
         <div className="grid w-full grid-cols-2 gap-x-4">
@@ -83,22 +143,22 @@ export function Header76() {
                 <div className="relative w-full pt-[120%]">
                   <img
                     className="absolute inset-0 size-full rounded-image object-cover"
-                    src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
-                    alt={`Relume placeholder image ${index + 1}`}
+                    src={galleryImages[index]}
+                    alt={galleryAltTexts[index]}
                   />
                 </div>
               </div>
             ))}
           </div>
-          
+            
           <div className="grid size-full animate-loop-vertically grid-cols-1 gap-4">
             {Array.from({ length: 6 }, (_, index) => (
               <div key={`right-${index}`} className="grid size-full grid-cols-1 gap-4">
                 <div className="relative w-full pt-[120%]">
                   <img
                     className="absolute inset-0 size-full rounded-image object-cover"
-                    src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
-                    alt={`Relume placeholder image ${index + 1}`}
+                    src={galleryImages[index + 6]}
+                    alt={galleryAltTexts[index + 6]}
                   />
                 </div>
               </div>
