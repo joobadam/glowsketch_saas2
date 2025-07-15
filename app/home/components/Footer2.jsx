@@ -86,14 +86,14 @@ export function Footer2() {
           variants={containerVariants}
           className="grid grid-cols-1 items-start gap-x-[8vw] gap-y-12 pb-12 md:gap-y-16 md:pb-18 lg:grid-cols-[1fr_0.5fr] lg:gap-y-4 lg:pb-20"
         >
-          <div className="grid grid-cols-1 items-start gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-12 md:gap-x-8 lg:grid-cols-4">
+          <div className="grid grid-cols-1 items-start gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-12 md:gap-x-8 lg:grid-cols-4 ">
             <motion.a
               variants={itemVariants}
               href="#"
               className="sm:col-start-1 sm:col-end-4 sm:row-start-1 sm:row-end-2 lg:col-start-auto lg:col-end-auto lg:row-start-auto lg:row-end-auto group"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-2xl font-unbounded font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent group-hover:from-green-400 group-hover:to-green-600 transition-all duration-300 drop-shadow-sm group-hover:drop-shadow-lg">
+              <div className="text-2xl w-fit md:text-xl md:-translate-x-20 font-unbounded font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent group-hover:from-green-400 group-hover:to-green-600 transition-all duration-300 drop-shadow-sm group-hover:drop-shadow-lg">
                 GlowSketch
               </div>
             </motion.a>
@@ -185,12 +185,12 @@ export function Footer2() {
                     placeholder="Enter your email address"
                     value={formState.email}
                     onChange={formState.handleSetEmail}
-                    className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-neutral-light/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/30 text-neutral-darker placeholder:text-neutral transition-all duration-300 shadow-sm hover:shadow-md"
+                    className="text-xs w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-neutral-light/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/30 text-neutral-darker placeholder:text-neutral transition-all duration-300 shadow-sm hover:shadow-md "
                     required
                   />
                   <motion.button
                     type="submit"
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gradient-to-r from-green-400 to-green-600 text-white font-medium rounded-lg shadow-sm hover:shadow-lg transition-all duration-300"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gradient-to-r from-green-400 to-green-600 text-white font-medium rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 translate-x-2"
                     whileHover={{ scale: 1.05, boxShadow: "0 4px 15px rgba(0, 255, 0, 0.3)" }}
                     whileTap={{ scale: 0.95 }}
                   >

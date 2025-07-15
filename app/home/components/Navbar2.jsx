@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { RxChevronDown } from "react-icons/rx";
+import { Link } from "next-view-transitions";
 
 const useNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -63,16 +64,17 @@ export function Navbar2() {
     >
       <div className="mx-auto size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center lg:justify-between lg:gap-4">
         <div className="flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0">
-          <motion.a 
-            href="#"
+          <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
             className="group"
           >
-            <div className="text-2xl font-unbounded font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent group-hover:from-green-500 group-hover:to-green-700 transition-all duration-300">
-              GlowSketch
-            </div>
-          </motion.a>
+            <Link href="/">
+              <div className="text-2xl font-unbounded font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent group-hover:from-green-500 group-hover:to-green-700 transition-all duration-300">
+                GlowSketch
+              </div>
+            </Link>
+          </motion.div>
           
           <div className="flex items-center gap-4 lg:hidden">
             <div>
@@ -141,30 +143,39 @@ export function Navbar2() {
           transition={{ duration: 0.4 }}
           className="overflow-hidden px-[5%] text-center lg:flex lg:items-center lg:justify-center lg:px-0 lg:[--height-closed:auto] lg:[--height-open:auto] bg-white/90 backdrop-blur-md lg:bg-transparent"
         >
-          <motion.a
-            href="#"
-            className="block py-3 text-md first:pt-7 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2 text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium relative group"
+          <motion.div
             whileHover={{ scale: 1.05 }}
           >
-            <span className="relative z-10">Home</span>
-            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 lg:block"></div>
-          </motion.a>
-          <motion.a
-            href="#"
-            className="block py-3 text-md first:pt-7 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2 text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium relative group"
+            <Link
+              href="/"
+              className="block py-3 text-md first:pt-7 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2 text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium relative group"
+            >
+              <span className="relative z-10">Home</span>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 lg:block"></div>
+            </Link>
+          </motion.div>
+          <motion.div
             whileHover={{ scale: 1.05 }}
           >
-            <span className="relative z-10">About Us</span>
-            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 lg:block"></div>
-          </motion.a>
-          <motion.a
-            href="#"
-            className="block py-3 text-md first:pt-7 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2 text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium relative group"
+            <Link
+              href="/how-it-works"
+              className="block py-3 text-md first:pt-7 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2 text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium relative group"
+            >
+              <span className="relative z-10">About Us</span>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 lg:block"></div>
+            </Link>
+          </motion.div>
+          <motion.div
             whileHover={{ scale: 1.05 }}
           >
-            <span className="relative z-10">Features</span>
-            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 lg:block"></div>
-          </motion.a>
+            <Link
+              href="/features"
+              className="block py-3 text-md first:pt-7 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2 text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium relative group"
+            >
+              <span className="relative z-10">Features</span>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 lg:block"></div>
+            </Link>
+          </motion.div>
           
           <div
             onMouseEnter={useActive.openOnDesktopDropdownMenu}
@@ -209,27 +220,36 @@ export function Navbar2() {
                 transition={{ duration: 0.2 }}
                 className="bg-white/95 backdrop-blur-md lg:absolute lg:z-50 lg:border lg:border-neutral-light/30 lg:p-3 lg:[--y-close:25%] rounded-xl shadow-lg lg:min-w-[200px]"
               >
-                <motion.a
-                  href="#"
-                  className="block py-3 text-center lg:px-4 lg:py-2 lg:text-left text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium rounded-lg hover:bg-green-50"
+                <motion.div
                   whileHover={{ scale: 1.05, x: 5 }}
                 >
-                  Contact
-                </motion.a>
-                <motion.a
-                  href="#"
-                  className="block py-3 text-center lg:px-4 lg:py-2 lg:text-left text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium rounded-lg hover:bg-green-50"
+                  <Link
+                    href="/contact"
+                    className="block py-3 text-center lg:px-4 lg:py-2 lg:text-left text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium rounded-lg hover:bg-green-50"
+                  >
+                    Contact
+                  </Link>
+                </motion.div>
+                <motion.div
                   whileHover={{ scale: 1.05, x: 5 }}
                 >
-                  Support
-                </motion.a>
-                <motion.a
-                  href="#"
-                  className="block py-3 text-center lg:px-4 lg:py-2 lg:text-left text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium rounded-lg hover:bg-green-50"
+                  <Link
+                    href="/support"
+                    className="block py-3 text-center lg:px-4 lg:py-2 lg:text-left text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium rounded-lg hover:bg-green-50"
+                  >
+                    Support
+                  </Link>
+                </motion.div>
+                <motion.div
                   whileHover={{ scale: 1.05, x: 5 }}
                 >
-                  Blog
-                </motion.a>
+                  <Link
+                    href="/blog"
+                    className="block py-3 text-center lg:px-4 lg:py-2 lg:text-left text-neutral-darker hover:text-green-600 transition-colors duration-300 font-medium rounded-lg hover:bg-green-50"
+                  >
+                    Blog
+                  </Link>
+                </motion.div>
               </motion.nav>
             </AnimatePresence>
           </div>

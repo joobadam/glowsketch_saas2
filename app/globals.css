@@ -1,8 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import "tailwindcss";
 
 @layer theme {
   :root {
+    /* Next.js font variables */
+    --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+    --font-heading: var(--font-unbounded), system-ui, sans-serif;
+    --font-display: var(--font-unbounded), system-ui, sans-serif;
+
     /* Színek a design system alapján */
     --color-primary: #00ff00;
     --color-primary-dark: #00cc00;
@@ -37,7 +41,7 @@
   }
 
   body {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-sans);
     font-weight: 400;
     line-height: 1.6;
     color: var(--color-neutral-darker);
@@ -55,7 +59,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Unbounded", sans-serif;
+    font-family: var(--font-heading);
     font-weight: 600;
     line-height: 1.2;
     color: var(--color-neutral-darkest);
@@ -155,13 +159,21 @@
 }
 
 @layer components {
-  /* Font utility osztályok */
+  /* Font utility osztályok - Next.js változókkal */
   .font-unbounded {
-    font-family: "Unbounded", sans-serif;
+    font-family: var(--font-heading);
   }
 
   .font-dm-sans {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-sans);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
   }
 
   /* Színek utility osztályok */
@@ -402,6 +414,7 @@
     font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 700;
     line-height: 1.1;
+    font-family: var(--font-heading);
   }
 
   .text-large {
@@ -483,3 +496,4 @@
     scroll-behavior: smooth;
   }
 }
+

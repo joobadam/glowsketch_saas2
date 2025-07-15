@@ -32,7 +32,7 @@ export function Layout250() {
   };
 
   return (
-    <section id="relume" className="spacing-section px-[5%] bg-[#CCFFCC]">
+    <section id="relume" className="spacing-section px-[5%] bg-[#e5ffe5]">
       <div className="container-custom">
         <motion.div 
           initial="hidden"
@@ -42,9 +42,9 @@ export function Layout250() {
           className="mb-12 md:mb-18 lg:mb-20"
         >
           <motion.div className="max-w-lg">
-            <h2 className="font-unbounded font-bold text-neutral-darkest text-4xl leading-[1.2] md:text-5xl lg:text-6xl">
-              Discover the seamless process of creating art together on
-              GlowSketch.
+            <h2 className="font-bold text-neutral-darkest text-4xl leading-[1.2] md:text-5xl lg:text-4xl">
+            DISCOVER THE SEAMLESS PROCESS OF CREATING ART TOGETHER ON
+GLOWSKETCH.
             </h2>
           </motion.div>
         </motion.div>

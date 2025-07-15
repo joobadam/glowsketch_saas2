@@ -50,8 +50,8 @@ export function Gallery10() {
           variants={headerVariants}
           className="mb-12 text-center md:mb-18 lg:mb-20"
         >
-          <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl font-unbounded text-neutral-darkest">
-            Art Showcase
+          <h2 className="mb-5 text-4xl font-bold md:mb-6 md:text-5xl lg:text-6xl font-unbounded text-neutral-darkest">
+          ART SHOWCASE
           </h2>
           <p className="md:text-md text-neutral-darker">
             Explore stunning creations from our talented artists.

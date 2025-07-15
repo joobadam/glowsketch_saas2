@@ -124,11 +124,11 @@ export function Pricing24() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={headerVariants}
-          className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12"
+          className="mx-auto mb-8 max-w-2xl text-center md:mb-10 lg:mb-12"
         >
           <p className="mb-3 font-semibold md:mb-4 text-primary">Affordable</p>
-          <h1 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl font-unbounded text-neutral-darkest">
-            Pricing Plans
+          <h1 className="mb-5 text-3xl font-bold md:mb-6 md:text-5xl lg:text-6xl font-unbounded text-neutral-darkest">
+          PRICING PLANS
           </h1>
           <p className="md:text-md text-neutral-darker">
             Choose a plan that fits your creative needs.
