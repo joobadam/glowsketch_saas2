@@ -44,7 +44,7 @@ export function PortfolioHeader8() {
                 variants={fadeUpVariants}
                 initial="hidden"
                 animate="visible"
-                className="mb-5 font-bold text-white md:mb-6 text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl  leading-tight tracking-tight"
+                className="mb-5 font-bold text-white md:mb-6 text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight tracking-tight"
               >
                 Vibrant Cityscape
               </motion.h1>

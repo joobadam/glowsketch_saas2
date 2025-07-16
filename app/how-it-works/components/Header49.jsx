@@ -21,7 +21,7 @@ export function Header49() {
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#00ff00] min-h-[80vh] relative overflow-hidden">
+    <section id="relume" className="mx-auto px-[5%] py-16 md:py-24 lg:py-28 bg-[#00ff00] min-h-[80vh] xl:min-h-[30vh] relative overflow-hidden">
       <Particles
         className="absolute inset-0"
         quantity={100}
@@ -29,7 +29,7 @@ export function Header49() {
         color="#000"
         refresh
       />
-      <div className="container relative z-10">
+      <div className="container relative z-10 mx-auto">
         <div className="grid grid-cols-1 items-start gap-x-40 gap-y-5 md:grid-cols-2 lg:gap-x-20 lg:gap-y-16">
           <motion.div
             custom={0}

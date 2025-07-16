@@ -20,8 +20,8 @@ export function Layout251() {
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#e5ffe5]">
-      <div className="container">
+    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#e5ffe5] mx-auto">
+      <div className="container mx-auto">
         <div className="mb-12 grid grid-cols-1 items-start gap-5 md:mb-18 md:grid-cols-2 md:gap-x-12 lg:mb-20 lg:gap-x-20">
           <motion.div
             custom={0}

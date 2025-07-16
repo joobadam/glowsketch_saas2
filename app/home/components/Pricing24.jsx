@@ -128,7 +128,7 @@ export function Pricing24() {
         >
           <p className="mb-3 font-semibold md:mb-4 text-primary">Affordable</p>
           <h1 className="mb-5 text-3xl font-bold md:mb-6 md:text-5xl lg:text-6xl font-unbounded text-neutral-darkest">
-          PRICING PLANS
+          Pricing Plans
           </h1>
           <p className="md:text-md text-neutral-darker">
             Choose a plan that fits your creative needs.

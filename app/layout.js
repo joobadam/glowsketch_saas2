@@ -1,9 +1,11 @@
 import { Unbounded, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { Navbar2 } from "./home/components/Navbar2";
-import { Footer2 } from "./home/components/Footer2";
+
+import { Footer2 } from "../components/ui/Footer2";
 import { TwentyFirstToolbar } from "@21st-extension/toolbar-next";
 import { ViewTransitions } from "next-view-transitions";
+import Navbar2 from "@/components/ui/mini-navbar";
+
 
 const unbounded = Unbounded({
   subsets: ["latin"],

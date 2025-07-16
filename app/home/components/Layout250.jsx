@@ -43,8 +43,7 @@ export function Layout250() {
         >
           <motion.div className="max-w-lg">
             <h2 className="font-bold text-neutral-darkest text-4xl leading-[1.2] md:text-5xl lg:text-4xl">
-            DISCOVER THE SEAMLESS PROCESS OF CREATING ART TOGETHER ON
-GLOWSKETCH.
+            Discover the seamless process of creating art together on GlowSketch. 
             </h2>
           </motion.div>
         </motion.div>

@@ -20,9 +20,9 @@ export function Cta19() {
   };
 
   return (
-    <section id="relume" className="relative px-[5%] py-16 md:py-24 lg:py-28 bg-[#cdffcb]">
-      <div className="container">
-        <div className="w-full max-w-lg">
+    <section id="relume" className="relative px-[5%] py-16 md:py-24 lg:py-28 bg-[#cdffcb] mx-auto">
+      <div className="container mx-auto">
+        <div className="w-full max-w-lg ">
           <motion.h2
             custom={0}
             variants={fadeUpVariants}

@@ -78,7 +78,7 @@ export function Header76() {
           animate="visible"
           className="font-main mb-5 text-4xl font-bold md:mb-6 md:text-7xl lg:text-6xl capitalize font-heading text-neutral-darkest"
         >
-          GLOWSKETCH
+          GlowSketch
         </motion.h1>
         <motion.p
           custom={2}
