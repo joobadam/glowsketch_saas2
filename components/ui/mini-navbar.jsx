@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "next-view-transitions";
 
 const Navbar2 = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +41,7 @@ const Navbar2 = () => {
       <div className="bg-[#1f1f1f57] backdrop-blur-sm border border-[#333] rounded-2xl shadow-lg">
         <div className="flex items-center justify-between px-6 py-3">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
+          <a href="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
             <div className="relative w-5 h-5 flex items-center justify-center">
               <span className="absolute w-1.5 h-1.5 rounded-full bg-gray-200 top-0 left-1/2 transform -translate-x-1/2 opacity-80"></span>
               <span className="absolute w-1.5 h-1.5 rounded-full bg-gray-200 left-0 top-1/2 transform -translate-y-1/2 opacity-80"></span>
@@ -50,31 +49,31 @@ const Navbar2 = () => {
               <span className="absolute w-1.5 h-1.5 rounded-full bg-gray-200 bottom-0 left-1/2 transform -translate-x-1/2 opacity-80"></span>
             </div>
             <span className="font-semibold text-gray-200">GlowSketch</span>
-          </Link>
+          </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1">
-            <Link
+            <a
               href="/"
               className="px-3 py-2 text-xs font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
               onClick={handleLinkClick}
             >
               Home
-            </Link>
-            <Link
+            </a>
+            <a
               href="/how-it-works"
               className="px-3 py-2 text-xs font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
               onClick={handleLinkClick}
             >
               About Us
-            </Link>
-            <Link
+            </a>
+            <a
               href="/features"
               className="px-3 py-2 text-xs font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
               onClick={handleLinkClick}
             >
               Features
-            </Link>
+            </a>
             
             {/* Dropdown */}
             <div className="relative" ref={dropdownRef}>
@@ -95,21 +94,21 @@ const Navbar2 = () => {
               
               {isDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-[#1f1f1f] rounded-lg shadow-lg border border-[#333] py-1">
-                  <Link
+                  <a
                     href="/pricing"
                     className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800/50 hover:text-white transition-colors"
                     onClick={handleLinkClick}
                   >
                     Pricing
-                  </Link>
+                  </a>
                
-                  <Link
+                  <a
                     href="/artworks"
                     className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800/50 hover:text-white transition-colors"
                     onClick={handleLinkClick}
                   >
                     Artworks
-                  </Link>
+                  </a>
                 </div>
               )}
             </div>
@@ -140,42 +139,42 @@ const Navbar2 = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden border-t border-gray-200 px-6 py-4 space-y-2">
-            <Link
+            <a
               href="/"
               className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
               onClick={handleLinkClick}
             >
               Home
-            </Link>
-            <Link
+            </a>
+            <a
               href="/how-it-works"
               className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
               onClick={handleLinkClick}
             >
               About Us
-            </Link>
-            <Link
+            </a>
+            <a
               href="/features"
               className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
               onClick={handleLinkClick}
             >
               Features
-            </Link>
-            <Link
+            </a>
+            <a
               href="/pricing"
               className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
               onClick={handleLinkClick}
             >
               Pricing
-            </Link>
+            </a>
         
-            <Link
+            <a
               href="/artworks"
               className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
               onClick={handleLinkClick}
             >
               Artworks
-            </Link>
+            </a>
             {/* Join button removed */}
           </div>
         )}

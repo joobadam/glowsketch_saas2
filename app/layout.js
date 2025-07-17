@@ -3,7 +3,6 @@ import "./globals.css";
 
 import { Footer2 } from "../components/ui/Footer2";
 import { TwentyFirstToolbar } from "@21st-extension/toolbar-next";
-import { ViewTransitions } from "next-view-transitions";
 import Navbar2 from "@/components/ui/mini-navbar";
 
 
@@ -38,7 +37,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ViewTransitions>
     <html lang="en" className={`${unbounded.variable} ${dmSans.variable}`}>
       <body className="font-sans antialiased">
         <TwentyFirstToolbar />
@@ -47,6 +45,5 @@ export default function RootLayout({ children }) {
         <Footer2 />
       </body>
     </html>
-    </ViewTransitions>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Link } from "next-view-transitions";
 import { motion } from "framer-motion";
 import { Particles } from "@/components/ui/particles";
 
